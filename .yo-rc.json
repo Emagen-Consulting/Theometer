@@ -1,0 +1,27 @@
+{
+  "generator-m-ionic": {
+    "answers": {
+      "appName": "Theometer",
+      "appId": "com.theometer",
+      "ionicCss": false,
+      "bowerPackages": [
+        "angular-dynamic-locale#~0.1.27",
+        "localforage#~1.4.0"
+      ],
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "plugins": [
+        "cordova-plugin-device",
+        "cordova-plugin-dialogs",
+        "ionic-plugin-keyboard",
+        "cordova-plugin-network-information",
+        "cordova-plugin-splashscreen",
+        "cordova-plugin-statusbar"
+      ],
+      "appModule": "Theometer",
+      "ecosystems": []
+    }
+  }
+}
