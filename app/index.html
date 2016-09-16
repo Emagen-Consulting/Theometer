@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="theometer">
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
@@ -22,7 +22,7 @@
     <!-- endinject -->
     <!-- endbuild -->
   </head>
-  <body ng-app="Theometer">
+  <body>
 
     <!-- the nav bar will be updated as we navigate between views -->
     <!-- <ion-nav-bar> can be removed when using sidemenu (contained in menu.html) -->
@@ -46,16 +46,18 @@
     <script src="bower_components/ngCordova/dist/ng-cordova.js"></script>
     <script src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
     <script src="bower_components/localforage/dist/localforage.js"></script>
+    <script src="bower_components/angular-filter/dist/angular-filter.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js scripts/app.js -->
     <!-- inject:js -->
-    <script src="main/main.js"></script>
+    <script src="app.js"></script>
     <script src="main/services/main-serv.js"></script>
+    <script src="main/main.js"></script>
     <script src="main/controllers/debug-ctrl.js"></script>
     <script src="main/constants/config-const.js"></script>
-    <script src="app.js"></script>
+    <script src="app.route.js"></script>
     <!-- endinject -->
     <!-- endbuild -->
   </body>

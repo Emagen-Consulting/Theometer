@@ -1,5 +1,20 @@
-'use strict';
-angular.module('Theometer', [
-  // load your modules here
-  'main', // starting with the main module
-]);
+(function() {
+  'use strict';
+
+
+  angular.module('theometer', [
+    // angular modules
+
+    // 3rd party modules
+    'ionic',
+    'ngCordova',
+    'ui.router',
+
+    // app modules
+    'theometer.main'
+  ]);
+
+  angular.module('theometer.main', []);
+
+})();
+
