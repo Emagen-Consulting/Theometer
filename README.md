@@ -13,10 +13,16 @@ Theometer is built using the following technologies
 - [Bower](https://bower.io/)
 
 #### Running
-Run the following command. Note: target can be changed to a different device.
+To run in the `iPhone simulator`, enter the following command into your terminal (Note: target can be changed to a different device):
 ```
   gulp --livereload "run ios --emulate --target='iPhone-6s'"
 ```
+
+To run in the `browser`, enter the following command in your terminal:
+```
+  gulp watch
+```
+
 
 ### Features
 

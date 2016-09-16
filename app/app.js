@@ -11,10 +11,12 @@
     'ui.router',
 
     // app modules
-    'theometer.main'
+    'theometer.main',
+    'theometer.returnVisits'
   ]);
 
   angular.module('theometer.main', []);
+  angular.module('theometer.returnVisits', []);
 
 })();
 
