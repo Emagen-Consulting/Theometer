@@ -12,10 +12,12 @@
 
     // app modules
     'theometer.main',
+    'theometer.ministry',
     'theometer.returnVisits'
   ]);
 
   angular.module('theometer.main', []);
+  angular.module('theometer.ministry', []);
   angular.module('theometer.returnVisits', []);
 
 })();
