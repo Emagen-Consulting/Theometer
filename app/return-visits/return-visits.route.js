@@ -15,7 +15,7 @@
       .state(root, {
         url: '/' + root,
         abstract: true,
-        templateUrl: 'common/nav/tabs.html'
+        templateUrl: root + '/return-visits.view.html'
       })
 
 
@@ -23,8 +23,9 @@
         url: '/list',
         views: {
           'tab-return-visits': {
-            templateUrl: root + '/views/list.html',
-            // controller: 'SomeCtrl as vm'
+            templateUrl: root + '/call-list/call-list.view.html',
+            controller: 'CallListController',
+            controllerAs: 'vm'
           }
         }
       })

@@ -1,3 +1,19 @@
 .return-visits-content {
   background-color: #4A6DA7;
+
+
+  .card {
+    &.item-complex .item-content {
+      padding: 5px;
+    }
+
+    .rv-status {
+      font-size: 30px;
+    }
+
+    .not-home {
+      color: lighten(#000000, 50%);
+    }
+
+  }
 }

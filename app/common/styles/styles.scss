@@ -1,0 +1,66 @@
+@import "./mixins";
+@import "./variables";
+
+.truncate {
+  @include truncate-text();
+}
+
+.pull-right {
+  float: right !important;
+  display: block !important;
+}
+.pull-left {
+  float: left !important;
+  display: block !important;
+}
+
+/* .badge was giving me issues, so copied the base style here */
+.pill {
+  display: inline-flex;
+  padding: 3px 8px;
+  min-width: 10px;
+  border-radius: 10px;
+  vertical-align: baseline;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  color: white;
+  &:empty {
+    display: none;
+  }
+  &.pill-light {
+    background-color: $light;
+  }
+  &.pill-stable {
+    background-color: $stable;
+  }
+  &.pill-positive {
+    background-color: $positive;
+  }
+  &.pill-calm {
+    background-color: $calm;
+  }
+  &.pill-assertive {
+    background-color: $assertive;
+  }
+  &.pill-balanced {
+    background-color: $balanced;
+  }
+  &.pill-energized {
+    background-color: $energized;
+  }
+  &.pill-royal {
+    background-color: $royal;
+  }
+  &.pill-dark {
+    background-color: $dark;
+  }
+  &.pill-outline {
+    background: none;
+    border: 2px solid #999999;
+    color: $dark;
+    padding: 1px 6px;
+  }
+}

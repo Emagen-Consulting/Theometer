@@ -1,0 +1,48 @@
+<ion-view view-title="Return Visits">
+
+  <ion-nav-buttons side="primary">
+    <button class="button button-stable button-clear button-small icon ion-navicon" ng-click="$ionicSideMenuDelegate.toggleLeft();"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="secondary">
+    <button class="button button-stable button-clear button-small icon ion-ios-plus-empty" ng-click="doSomething()"></button>
+  </ion-nav-buttons>
+
+
+
+  <ion-content class="return-visits-content">
+    <ion-list can-swipe="true">
+      <ion-item class="card" ng-repeat="item in vm.model.data" ui-sref="main.list">
+        <ion-option-button class="button-positive" ng-click="edit(item)">Archive</ion-option-button>
+
+        <div class="clearfix">
+          <div class="pull-left rv-status text-center row row-center" style="width: 10%;">
+            <span ng-if="item.isHome" class="icon ion-android-microphone dark"></span>
+            <span ng-if="!item.isHome" class="icon ion-android-microphone-off not-home"></span>
+          </div>
+          <div class="pull-left" style="width: 90%;">
+            <div class="clearfix">
+              <div class="pull-left"><b>{{item.name}}</b></div>
+              <div class="pull-right">{{item.visitDate}}</div>
+            </div>
+            <div class="clearfix">
+              <div class="pull-left truncate" style="width: 75%;">{{item.address}}</div>
+              <div class="pull-right">
+                <span class="pill pill-outline">{{item.attemptsSinceContact}}</span>
+                <span class="pill" ng-class="{
+                'pill-balanced': item.daysSinceContact <= 7,
+                'pill-energized': item.daysSinceContact > 7 && item.daysSinceContact <= 14,
+                'pill-assertive': item.daysSinceContact >  14
+                }">{{item.daysSinceContact}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>
