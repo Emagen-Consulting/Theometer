@@ -1,0 +1,52 @@
+<ion-popover-view style="min-width: 250px;">
+
+  <div ng-show="vm.view.popoverIndex == 0">
+    <ion-header-bar>
+      <h1 class="title">List Options</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item ng-click="vm.events.popover.onChangeView(1)">
+          Default View
+          <span class="item-note">
+            {{vm.model.options.callType}} &nbsp;<i class="ion-ios-arrow-right"></i>
+          </span>
+        </ion-item>
+        <ion-item ng-click="vm.events.popover.onChangeView(2)">
+          Sort Order
+          <span class="item-note">
+            {{vm.model.options.sorting}} &nbsp;<i class="ion-ios-arrow-right"></i>
+          </span>
+        </ion-item>
+      </ion-list>
+
+
+    </ion-content>
+  </div>
+
+  <div ng-show="vm.view.popoverIndex == 1">
+    <ion-header-bar class="item-input-inset">
+      <button class="button button-small button-clear ion-ios-arrow-back popover-header-link" ng-click="vm.events.popover.onChangeView(0)"> Back</button>
+      <h1 class="title">Default View</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-radio name="type" ng-repeat="item in vm.view.callTypes" ng-model="vm.model.options.callType" ng-value="item" ng-click="vm.events.onCallTypeChanged()">{{item}}</ion-radio>
+      </ion-list>
+    </ion-content>
+  </div>
+
+  <div ng-show="vm.view.popoverIndex == 2">
+    <ion-header-bar class="item-input-inset">
+      <button class="button button-small button-clear ion-ios-arrow-back popover-header-link" ng-click="vm.events.popover.onChangeView(0)"> Back</button>
+      <h1 class="title">Sort Order</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-radio name="sort" ng-repeat="item in vm.view.sortOptions" ng-model="vm.model.options.sorting" ng-value="item" ng-click="vm.events.onSortOptionsChanged()">{{item}}</ion-radio>
+      </ion-list>
+    </ion-content>
+  </div>
+
+
+</ion-popover-view>

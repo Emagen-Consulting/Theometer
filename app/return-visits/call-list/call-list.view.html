@@ -1,10 +1,11 @@
 <ion-view view-title="Return Visits">
 
   <ion-nav-buttons side="primary">
-    <button class="button button-stable button-clear button-small icon ion-navicon" ng-click="$ionicSideMenuDelegate.toggleLeft();"></button>
+    <button class="button button-stable button-clear button-small icon ion-navicon" ng-click="menu.events.onMenuClicked()"></button>
   </ion-nav-buttons>
   <ion-nav-buttons side="secondary">
-    <button class="button button-stable button-clear button-small icon ion-ios-plus-empty" ng-click="doSomething()"></button>
+    <button class="button button-stable button-clear button-small icon ion-ios-more-outline" ng-click="vm.events.popover.open($event)"></button>
+    <button class="button button-stable button-clear icon ion-ios-plus-empty" ng-click="doSomething()"></button>
   </ion-nav-buttons>
 
 
@@ -15,11 +16,12 @@
         <ion-option-button class="button-positive" ng-click="edit(item)">Archive</ion-option-button>
 
         <div class="clearfix">
-          <div class="pull-left rv-status text-center row row-center" style="width: 10%;">
-            <span ng-if="item.isHome" class="icon ion-android-microphone dark"></span>
-            <span ng-if="!item.isHome" class="icon ion-android-microphone-off not-home"></span>
+          <div class="pull-left rv-status text-center row row-center">
+            <span ng-if="item.isHome" class="icon ion-ios-mic dark"></span>
+            <ion-icon ios="ios-mic" md="md-mic"></ion-icon>
+            <span ng-if="!item.isHome" class="icon ion-ios-mic-off not-home"></span>
           </div>
-          <div class="pull-left" style="width: 90%;">
+          <div class="pull-full">
             <div class="clearfix">
               <div class="pull-left"><b>{{item.name}}</b></div>
               <div class="pull-right">{{item.visitDate}}</div>

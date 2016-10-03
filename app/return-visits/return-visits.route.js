@@ -15,7 +15,9 @@
       .state(root, {
         url: '/' + root,
         abstract: true,
-        templateUrl: root + '/return-visits.view.html'
+        templateUrl: root + '/return-visits.view.html',
+        controller: 'RvMenuController',
+        controllerAs: 'menu'
       })
 
 
@@ -30,15 +32,6 @@
         }
       })
 
-      .state(root + '.debug', {
-        url: '/debug',
-        views: {
-          'tab-return-visits': {
-            templateUrl: 'main/templates/debug.html',
-            controller: 'DebugCtrl as ctrl'
-          }
-        }
-      })
 
     ;
   }

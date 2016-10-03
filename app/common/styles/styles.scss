@@ -14,6 +14,10 @@
   display: block !important;
 }
 
+.pull-full {
+  overflow: hidden;
+}
+
 /* .badge was giving me issues, so copied the base style here */
 .pill {
   display: inline-flex;
@@ -63,4 +67,8 @@
     color: $dark;
     padding: 1px 6px;
   }
+}
+
+.popover-header-link {
+  color: $positive !important;
 }
