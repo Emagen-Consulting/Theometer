@@ -21,6 +21,7 @@
     vm.view = {
       settingsOptions: [
         'Books',
+        'Brochures',
         'Household Member Types',
         'Invitations',
         'Magazines',
