@@ -5,20 +5,30 @@
   </ion-nav-buttons>
   <ion-nav-buttons side="secondary">
     <button class="button button-stable button-clear button-small icon ion-ios-more-outline" ng-click="vm.events.popover.open($event)"></button>
-    <button class="button button-stable button-clear icon ion-ios-plus-empty" ng-click="doSomething()"></button>
+    <button class="button button-stable button-clear icon ion-ios-plus-empty" ng-click="vm.events.onAddClicked()"></button>
   </ion-nav-buttons>
 
 
-
   <ion-content class="return-visits-content">
+
+    <!--<div class="row row-center">-->
+      <!--<div class="col text-center">-->
+        <!--<div class="button-bar button-bar-inline">-->
+          <!--<a class="button button-small">All</a>-->
+          <!--<a class="button button-small active">Active</a>-->
+          <!--<a class="button button-small">Archived</a>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+
     <ion-list can-swipe="true">
-      <ion-item class="card" ng-repeat="item in vm.model.data" ui-sref="main.list">
+      <ion-item class="card" ng-repeat="item in vm.model.data" ui-sref="return-visits.call-details({id: item.id})" ng-class="{'inactive': !item.isActive}">
         <ion-option-button class="button-positive" ng-click="edit(item)">Archive</ion-option-button>
 
         <div class="clearfix">
           <div class="pull-left rv-status text-center row row-center">
             <span ng-if="item.isHome" class="icon ion-ios-mic dark"></span>
-            <ion-icon ios="ios-mic" md="md-mic"></ion-icon>
             <span ng-if="!item.isHome" class="icon ion-ios-mic-off not-home"></span>
           </div>
           <div class="pull-full">

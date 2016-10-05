@@ -2,45 +2,33 @@
   'use strict';
 
   angular.module('theometer.returnVisits')
-    .controller('RvMenuController', controller);
+    .controller('InvitationsController', controller);
 
   /** @ngInject */
-  function controller($ionicSideMenuDelegate, $state, rvConstants) {
+  function controller($log) {
     var vm = this;
 
     /** use revealing module pattern (vm.events, vm.model, vm.view) with function hoisting */
     // ui events
-    vm.events = {
-      onMenuClicked: onMenuClicked,
-      onMenuItemClicked: onMenuItemClicked
-    };
+    vm.events = {};
 
     // model binding
     vm.model = {};
 
     // handles display logic
-    vm.view = {
-      settingsOptions: rvConstants.settingsOptions
-    };
+    vm.view = {};
 
     init();
 
 
     /** ------------------------------- start up functions ------------------------------ */
     function init() {
-
+      $log.debug('got here');
     }
 
 
     /** --------------------------------- implementation -------------------------------- */
-    function onMenuClicked() {
-      // opens/closes the slide menu
-      $ionicSideMenuDelegate.toggleLeft();
-    }
 
-    function onMenuItemClicked(route) {
-      $state.go(route);
-    }
 
 
     /** ---------------------------- private helper functions --------------------------- */

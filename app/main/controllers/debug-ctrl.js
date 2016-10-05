@@ -6,7 +6,7 @@
   /** @ngInject */
   function controller($log, $http, $timeout, $state, Main, Config, $cordovaDevice) {
     $log.log('Hello from your Controller: DebugCtrl in module main:. This is your controller:', this);
-    console.log($state.get());
+    $log.log($state.get());
     // bind data from services
     this.someData = Main.someData;
     this.ENV = Config.ENV;

@@ -20,17 +20,18 @@
 
 /* .badge was giving me issues, so copied the base style here */
 .pill {
-  display: inline-flex;
-  padding: 3px 8px;
-  min-width: 10px;
   border-radius: 10px;
-  vertical-align: baseline;
-  text-align: center;
-  white-space: nowrap;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 16px;
   color: white;
+  display: inline-flex;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 16px;
+  min-width: 10px;
+  padding: 3px 8px;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: nowrap;
   &:empty {
     display: none;
   }
@@ -71,4 +72,29 @@
 
 .popover-header-link {
   color: $positive !important;
+}
+
+.center {
+  text-align: center !important;
+}
+
+.center-div {
+  margin: auto !important;
+  display: inline-block !important;
+}
+
+.button-bar-header {
+  .button-outline {
+    background-color: #ffffff !important;
+  }
+}
+
+
+/** overrides */
+.modal {
+  top: 0px !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
 }

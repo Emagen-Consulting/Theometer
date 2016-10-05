@@ -5,12 +5,13 @@
     .controller('CallListController', controller);
 
   /** @ngInject */
-  function controller($ionicPopover, $log, $scope) {
+  function controller($ionicPopover, $log, $scope, $state, modalService) {
     var vm = this;
 
     /** use revealing module pattern (vm.events, vm.model, vm.view) with function hoisting */
     // ui events
     vm.events = {
+      onAddClicked: onAddClicked,
       onCallTypeChanged: onCallTypeChanged,
       onSortOptionsChanged: onSortOptionsChanged,
       popover: {
@@ -22,11 +23,12 @@
     // model binding
     vm.model = {
       data: [
-        { id: 1, isHome: true,  name: 'Penelope Cruz',   visitDate: 'Sun Jul 18', attemptsSinceContact: null, daysSinceContact: 7, address: '1740 N. 80th Ln, Phoenix, AZ 85002' },
-        { id: 2, isHome: false, name: 'Michael Pena',    visitDate: 'Sun Jul 18', attemptsSinceContact: 2, daysSinceContact: 12, address: '10140 Preston Ln, Tolleson, AZ 85001' },
-        { id: 3, isHome: true,  name: 'Jennifer Garner', visitDate: 'Sun Jul 18', attemptsSinceContact: null, daysSinceContact: 22, address: '3802 N. 103rd Ave, Tolleson, AZ 85001' },
-        { id: 4, isHome: true,  name: 'Tom Cruise',      visitDate: 'Sun Jul 18', attemptsSinceContact: null, daysSinceContact: 12, address: '7955 Hammond, Phoenix, AZ 85002' },
-        { id: 5, isHome: false, name: 'Seamus Deaver',   visitDate: 'Sun Jul 18', attemptsSinceContact: 3, daysSinceContact: 12, address: 'Cart by the beach' }
+        { id: 1, isHome: true,  name: 'Penelope Cruz',   visitDate: 'Sun Jul 18', isActive: true, attemptsSinceContact: null, daysSinceContact: 7, address: '1740 N. 80th Ln, Phoenix, AZ 85002' },
+        { id: 2, isHome: false, name: 'Michael Pena',    visitDate: 'Sun Jul 18', isActive: true, attemptsSinceContact: 2, daysSinceContact: 12, address: '10140 Preston Ln, Tolleson, AZ 85001' },
+        { id: 3, isHome: true,  name: 'Jennifer Garner', visitDate: 'Sun Jul 18', isActive: true, attemptsSinceContact: null, daysSinceContact: 22, address: '3802 N. 103rd Ave, Tolleson, AZ 85001' },
+        { id: 4, isHome: true,  name: 'Tom Cruise',      visitDate: 'Sun Jul 18', isActive: true, attemptsSinceContact: null, daysSinceContact: 12, address: '7955 Hammond, Phoenix, AZ 85002' },
+        { id: 5, isHome: false, name: 'Seamus Deaver',   visitDate: 'Sun Jul 18', isActive: true, attemptsSinceContact: 3, daysSinceContact: 12, address: 'Cart by the beach' },
+        { id: 5, isHome: false, name: 'Nathan Fillion',   visitDate: 'Sun Jul 18', isActive: false, attemptsSinceContact: 3, daysSinceContact: 12, address: '7899 Watson, Phoenix, AZ 85001' }
       ],
       options: {
         callType: 'Active Calls',
@@ -56,10 +58,17 @@
       $scope.$on('$destroy', function() {
         vm.view.popover.remove();
       });
+
+      $log.debug('states', $state.get());
     }
 
 
     /** --------------------------------- implementation -------------------------------- */
+    function onAddClicked() {
+      $log.debug('add clicked');
+      modalService.show('return-visits/add-call/add-call.modal.view.html', 'AddCallController as vm');
+    }
+
     function onCallTypeChanged() {
       $log.debug('call type changed');
     }
@@ -70,7 +79,7 @@
 
     function onOpenPopover($event) {
       vm.view.popoverIndex = 0;
-      vm.view.popover.show($event)
+      vm.view.popover.show($event);
     }
 
     function onSortOptionsChanged() {

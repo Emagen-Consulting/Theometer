@@ -14,7 +14,8 @@
 /gulp/.gulp_settings.json
 
 # ionic fonts
-/app/main/assets/fonts/ionicons.*
+/app/common/assets/fonts/ionicons.*
+/app/return-visits/assets/fonts/ionicons.*
 
 # cordova
 /platforms/

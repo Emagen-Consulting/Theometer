@@ -5,7 +5,7 @@
     .controller('MinistryListController', controller);
 
   /** @ngInject */
-  function controller() {
+  function controller($log) {
     var vm = this;
 
     /** use revealing module pattern (vm.events, vm.model, vm.view) with function hoisting */
@@ -24,7 +24,7 @@
     /** ------------------------------- start up functions ------------------------------ */
     function init() {
       //console.log($state.get());
-      console.log('got here');
+      $log.log('got here');
     }
 
 
